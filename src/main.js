@@ -8,7 +8,7 @@ import {AjaxPlugin, ToastPlugin} from 'vux'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-light.css'
-
+Vue.use(MuseUI)
 Vue.use(AjaxPlugin)
 
 router.beforeEach((to, from, next) => {
@@ -31,7 +31,6 @@ router.beforeEach((to, from, next) => {
 fastclick.attach(document.body)
 Vue.config.productiontip = false
 Vue.use(ToastPlugin)
-Vue.use(MuseUI)
 
 Vue.prototype.DateTimeUtil = function (str) {
   const year = str.substr(0, 4)

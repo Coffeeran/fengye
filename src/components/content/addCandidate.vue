@@ -95,11 +95,12 @@
     <mu-dialog :open="dialog" :title="candidate.name+'->'+department.name+'->'+supplier.name" bodyClass="dialog-body">
       <mu-flexbox>
         <mu-flexbox-item>
-          <mu-text-field ref="mtf" hintText="电话号码" type="number" icon="phone" v-model="candidate.phone" :maxLength="11"/>
+          <mu-text-field :inputClass="'phoneNumber'" ref="phoneNumber" hintText="电话号码" type="number" icon="phone" v-model="candidate.phone" :maxLength="11"/>
         </mu-flexbox-item>
       </mu-flexbox>
-      <mu-flat-button label="取消" slot="actions"  @click="close"/>
-      <mu-flat-button v-if="isBackFinished" label="提交" slot="actions" primary @click="saveCandidate"/>
+
+      <mu-raised-button  label="取消" slot="actions"  @click="close" backgroundColor="#f44336"/>
+      <mu-raised-button v-if="isBackFinished" label="提交" slot="actions" primary @click="saveCandidate"/>
     </mu-dialog>
   </div>
 </template>
@@ -232,6 +233,10 @@
       },
       open () {
         this.dialog = true
+//        this.$nextTick(() => {
+//          this.$refs.phoneNumber.focus()
+//          document.getElementsByClassName('phoneNumber')[0].focus()
+//        })
       },
       close () {
         this.dialog = false
