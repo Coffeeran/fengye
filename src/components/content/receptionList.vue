@@ -14,7 +14,7 @@
     <tr style="background-color: #F7F7F7">
       <th>姓名</th>
       <th>身份证号码</th>
-      <th>手机号</th>
+      <th>渠道</th>
       <th>供应商</th>
     </tr>
     </thead>
@@ -22,7 +22,7 @@
     <tr v-for="item in receptionList">
       <td>{{item.candidateName}}</td>
       <td>{{item.candidateIdNo}}</td>
-      <td>{{item.candidatePhone}}</td>
+      <td>{{item.departmentName}}</td>
       <td>{{item.supplierName}}</td>
     </tr>
     </tbody>
