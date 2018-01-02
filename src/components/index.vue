@@ -1,5 +1,5 @@
 <template>
-
+  <mu-raised-button label="注销" class="demo-raised-button" fullWidth primary  @click="logout"/>
 </template>
 
 <script>
@@ -7,6 +7,13 @@
   export default {
     data () {
       return {
+      }
+    },
+    methods: {
+      logout () {
+        this.$http.post('/api/user/logout.do').then((res) => {
+          this.$router.push({name: 'login'})
+        })
       }
     }
   }

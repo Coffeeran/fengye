@@ -60,7 +60,7 @@
           params: {
             date: new Date().getTime(),
             pageNum: 1,
-            pageSize: 100
+            pageSize: 500
           }
         }).then((res) => {
           this.receptionList = res.data.data.list
