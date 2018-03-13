@@ -8,12 +8,13 @@ import {AjaxPlugin, ToastPlugin} from 'vux'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-light.css'
+
 Vue.use(MuseUI)
 Vue.use(AjaxPlugin)
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
-    AjaxPlugin.$http.post('/api/user/get_user_info.do').then(function (res) {
+    AjaxPlugin.$http.post(process.env.API_HOST + 'user/get_user_info.do').then(function (res) {
       if (res.data.status === 0) {
         Vue.prototype.user = res.data.data
         next()
@@ -45,5 +46,5 @@ new Vue({
   router,
   render: h => h(App),
   template: '<App/>',
-  components: { App }
+  components: {App}
 })
