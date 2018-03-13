@@ -71,10 +71,10 @@
       export2Excel () {
         require.ensure([], () => {
           const {export_json_to_excel} = require('../../vendor/Export2Excel')
-          const tHeader = ['姓名', '性别', '民族', '出生日期', '地址', '身份证号码', '签发机关', '签发日期', '失效日期', '供应商', '渠道', '联系电话', '录入日期']
+          const tHeader = ['姓名', '性别', '民族', '出生日期', '地址', '身份证号码', '签发机关', '签发日期', '失效日期', '供应商', '渠道', '联系电话', '录入日期', '公司渠道']
           const filterVal = ['candidateName', 'candidateGender', 'candidateEthnicity',
             'candidateDateOfBirth', 'candidateAddress', 'candidateIdNo', 'candidateIssueDepartment', 'candidateIssueDate', 'candidateExpireDate',
-            'supplierName', 'departmentName', 'candidatePhone', 'createTime']
+            'supplierName', 'departmentName', 'candidatePhone', 'createTime', 'factoryName']
           const list = this.receptionList
           const data = this.formatJson(filterVal, list)
           export_json_to_excel(tHeader, data, dateFormat(new Date(), 'YYYY-MM-DD') + '录入名单')
