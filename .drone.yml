@@ -1,0 +1,6 @@
+pipeline:
+  build:
+    image: nodejs
+    privileged: true
+    commands:
+      - npm run build
